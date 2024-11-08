@@ -93,3 +93,12 @@ AUTH_API_URL=${AUTH_API_URL}
 PRODUCT_API_URL=${PRODUCT_API_URL}
 NODE_ENV=${NODE_ENV}
 EOF
+
+echo "File .env created successfully."
+
+echo "You can now run docker compose up to start the services."
+read -p "Run docker compose up? (y/n): " RUN_DOCKER_COMPOSE
+if [ "${RUN_DOCKER_COMPOSE}" == "y" ]
+then
+    docker compose up
+fi
