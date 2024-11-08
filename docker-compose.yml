@@ -31,8 +31,6 @@ services:
     image: ghcr.io/prismedroiteext/bzhspproduct
     ports:
       - "8081:8081"
-    volumes:
-      - ./bzhspproduct/app:/app
     environment:
       - PRODUCT_DB_HOST=${PRODUCT_DB_HOST}
       - PRODUCT_DB_USER=${PRODUCT_DB_USER}
@@ -61,7 +59,8 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=${NODE_ENV}
-      - API_URL=${API_URL}
+      - AUTH_API_URL=${AUTH_API_URL}
+      - PRODUCT_API_URL=${PRODUCT_API_URL}
 
 
 volumes:
